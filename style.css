@@ -1,245 +1,135 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* Reset léger */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Arrière-plan général */
 body {
-    min-height: 100vh;
-    background: linear-gradient(180deg, #0b172a 0%, #1f2a3a 40%, #f2f4f8 100%);
-    display: flex;
-    flex-direction: column;    /* ❤️ AJOUT ICI */
-    justify-content: flex-start;
-    align-items: center;       /* Centre tout horizontalement */
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: white;
 }
 
-
-/* Header principal */
+/* Header */
 #head-site {
-    margin-top: 40px;
-    padding: 20px 24px;
-    width: min(900px, 100% - 40px);
-
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  margin: 40px 0 20px;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
-/* Titre du site */
 .name-site {
-    color: #ffffff;
-    font-size: 1.8rem;
-    font-weight: 700;
-    white-space: nowrap;
+  font-size: 1.5rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-/* Champ de recherche */
 #site-search {
-    flex: 1;
-    padding: 10px 14px;
-    border-radius: 999px;
-    border: 2px solid #ffb400;         /* orange du logo */
-    outline: none;
-    font-size: 1rem;
-    background-color: rgba(255, 255, 255, 0.9);
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 2px solid #3a86ff;
+  background: white;
+  font-size: 1rem;
+  outline: none;
 }
 
 #site-search::placeholder {
-    color: #757575;
+  color: #999;
 }
 
-/* Bouton de recherche */
 #search-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 999px;
-    border: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffb400;         /* orange */
-    cursor: pointer;
-    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  background: #3a86ff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+#search-btn:hover {
+  background: #5a9aff;
 }
 
 #search-btn img {
-    width: 60%;
-    height: 60%;
-    object-fit: contain;
+  width: 24px;
+  height: 24px;
 }
 
-/* Effets hover / active */
-#search-btn:hover {
-    background-color: #ffcc40;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-}
-
-#search-btn:active {
-    transform: translateY(1px) scale(0.97);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive : piles sur mobile */
-@media (max-width: 600px) {
-    #head-site {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-    }
-
-    .name-site {
-        text-align: center;
-    }
-
-    .search-btn {
-        align-self: center;
-    }
-}
-
-/* --- CARTE MÉTÉO --- */
-
+/* Carte météo */
 #weather-container {
-    margin-top: 30px;
-    padding: 25px;
-    width: min(400px, 90%);
-    
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(12px);
-    border-radius: 20px;
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-
-    text-align: center;
-    color: white;
-
-    opacity: 1;
-    transform: translateY(0);
-    transition: 0.3s ease-in-out;
+  margin-top: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  text-align: center;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
-/* Titre : nom de la ville */
 #city {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #ffcc40; /* léger rappel du jaune/orang */
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-/* Température */
 #temperature {
-    font-size: 2.4rem;
-    font-weight: 600;
-    margin-bottom: 8px;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
-/* Description météo (“nuageux”, etc.) */
 #weather {
-    font-size: 1.2rem;
-    text-transform: capitalize;
-    opacity: 0.95;
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
 
-/* Animation d’apparition */
-.weather.show {
-    display: block !important;
-    animation: fadeIn 0.5s ease forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
+/* Historique */
 #history-container {
-    margin-top: 25px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .history-btn {
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: 1px solid #ffb400;
-    background-color: rgba(255,255,255,0.15);
-    color: white;
-    cursor: pointer;
-    transition: 0.2s;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #3a86ff;
+  background: rgba(58, 134, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
 .history-btn:hover {
-    background: #ffcc40;
-    color: black;
+  background: #3a86ff;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #head-site {
+    flex-direction: column;
+  }
+  
+  .name-site {
+    text-align: center;
+  }
 }
