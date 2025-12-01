@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherTime</title>
+    <link rel="icon" href="./image/Weatherlogo.png"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header id="head-site">
+        <h1 class="name-site">Weather Time</h1>
+        <input type="search" id="site-search" placeholder="La météo à ..." name="q"/>
+        <button id="search-btn" class="search-btn">
+            <img src="./image/search.png" alt="search"/>
+        </button>
+    </header>
+
+    <div id="weather-container" class="weather hidden">
+        <h2 id="city"></h2>
+        <p id="temperature"></p>
+        <p id="weather"></p>
+    </div>
+
+    <div id="history-container"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
